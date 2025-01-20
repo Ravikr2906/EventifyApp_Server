@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const meetupAppSchema = new mongoose.Schema(
+const eventifySchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -54,5 +54,5 @@ const meetupAppSchema = new mongoose.Schema(
   }
 );
 
-const MeetupApp = mongoose.model("meetupApp", meetupAppSchema);
-module.exports = MeetupApp;
+const EventifyApp = mongoose.model("EventifyApp", eventifySchema);
+module.exports = EventifyApp;

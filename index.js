@@ -1,8 +1,8 @@
 const { get } = require("mongoose");
 
 const { initializieDatabase } = require("./db/db.connect");
-const MeetupApp = require("./models/meetup.js");
-// const Books = require("./models/book.model.js");
+const EventifyApp = require("./models/eventify.js");
+
 const express = require("express");
 
 const cors = require("cors");
@@ -18,7 +18,7 @@ initializieDatabase();
 
 const createNewData = async (eventData) => {
   try {
-    const event = new MeetupApp(eventData);
+    const event = new EventifyApp(eventData);
     const saveEvent = await event.save();
     return saveEvent;
   } catch (error) {
@@ -37,7 +37,7 @@ app.post("/eventData", async (req, res) => {
 
 const readAllEvents = async () => {
   try {
-    const allEvents = await MeetupApp.find();
+    const allEvents = await EventifyApp.find();
     return allEvents;
   } catch (error) {
     throw error;
