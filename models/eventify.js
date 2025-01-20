@@ -54,5 +54,5 @@ const eventifySchema = new mongoose.Schema(
   }
 );
 
-const EventifyApp = mongoose.model("EventifyApp", eventifySchema);
+const EventifyApp = mongoose.model("meetupApp", eventifySchema);
 module.exports = EventifyApp;
